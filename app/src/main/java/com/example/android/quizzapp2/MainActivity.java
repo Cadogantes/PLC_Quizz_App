@@ -30,9 +30,9 @@ public class MainActivity extends AppCompatActivity {
     RadioButton rbQ4a1;
     RadioButton rbQ4a2;
     RadioButton rbQ4a3;
-    CheckBox rbQ5a1;
-    CheckBox rbQ5a2;
-    CheckBox rbQ5a3;
+    CheckBox cbQ5a1;
+    CheckBox cbQ5a2;
+    CheckBox cbQ5a3;
     RadioButton rbQ6a1;
     RadioButton rbQ6a2;
     RadioButton rbQ6a3;
@@ -49,7 +49,7 @@ public class MainActivity extends AppCompatActivity {
         AnswersListeners();
     }
 
-    void initialize() {
+    private void initialize() {
         score = 0;
         etQ1a1 = findViewById(R.id.q1et);
         rbQ2a1 = findViewById(R.id.q2a1);
@@ -62,9 +62,9 @@ public class MainActivity extends AppCompatActivity {
         rbQ4a1 = findViewById(R.id.q4a1);
         rbQ4a2 = findViewById(R.id.q4a2);
         rbQ4a3 = findViewById(R.id.q4a3);
-        rbQ5a1 = findViewById(R.id.q5a1);
-        rbQ5a2 = findViewById(R.id.q5a2);
-        rbQ5a3 = findViewById(R.id.q5a3);
+        cbQ5a1 = findViewById(R.id.q5a1);
+        cbQ5a2 = findViewById(R.id.q5a2);
+        cbQ5a3 = findViewById(R.id.q5a3);
         rbQ6a1 = findViewById(R.id.q6a1);
         rbQ6a2 = findViewById(R.id.q6a2);
         rbQ6a3 = findViewById(R.id.q6a3);
@@ -205,7 +205,7 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    void submitAnswers(View view) {
+    public void submitAnswers(View view) {
         int points = 0;
         //q1
         if ("SPS".equals(etQ1a1.getText().toString())) points++;
@@ -219,7 +219,7 @@ public class MainActivity extends AppCompatActivity {
         //q4
         if (rbQ4a1.isChecked()) points++;
         //q5
-        if (rbQ5a1.isChecked()&&rbQ5a3.isChecked()&&!rbQ5a2.isChecked()) points++;
+        if (cbQ5a1.isChecked()&&cbQ5a3.isChecked()&&!cbQ5a2.isChecked()) points++;
         //q6
         if (rbQ6a3.isChecked()) points++;
         //q7
